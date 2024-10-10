@@ -1,0 +1,302 @@
+:root {
+    --primary-color: #52616B;
+    --secondary-color: #e74c3c;
+    --hover-color:#E2DAD6;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.navbar {
+    background-color: var(--secondary-color);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand{
+    font-weight: bold;
+    color: #fff !important;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link{
+    color: #ecf0f1 !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 10px 5px !important;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link i{
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.nav-link::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 59%;
+    width: 0;
+    height: 2px;
+    background-color: var(--hover-color);
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover{
+    color: var(--hover-color) !important;
+}
+
+.nav-link:hover::after{
+    width: 100%;
+    left: 0;
+}
+
+.navbar-toggler {
+    border-color: #fff;
+}
+
+.navbar-toggler-icon{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 991px){
+    .navbar-nav{
+        background-color: rgba(44, 62, 80, 0.95);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+
+    .nav-link{
+        text-align: center;
+        justify-content: center;
+        margin: 5px 0;
+    }
+
+    .nav-link::after{
+        display: none;
+    }
+}
+
+.nav-item{
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s ease;
+}
+
+.nav-item.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*Parte del slider*/
+
+#fullWidthSlider {
+    width: 100%; /*Establece el ancho al 100% de su contenedor.*/
+    height: 500px; /*Establece una altura fija de 500px.*/
+}
+
+.carousel-item, .carousel-item img {
+    /*Se aplica tanto a los elementos del carrusel como a sus imágenes.*/
+    width: 100%; /*Establece el ancho al 100%.*/
+    height: 500px; /*Establece la altura*/
+    object-fit: cover; /*Utiliza object-fit: cover para asegurar que las imágenes cubran toda el área sin distorsión.*/
+}
+
+/*Parte de las cartas*/
+
+:root { 
+    --primary: #dd6f88;
+    --secondary: #001F3F;
+    --terciary: #3A6D8C;
+    --cuarto: #6A9AB0;
+    --quinto: #EAD8B1;
+}
+* { 
+    margin: auto;  /*Elimina los margenes predeterminados*/
+    padding: 0; /*Elimina los rellenos predeterminados*/
+    box-sizing: border-box; /* Incluye el borde y el relleno en el tamaño total del elemento */
+}
+
+
+body {
+    background-color: #3c4a4a; 
+    
+}
+
+.title {
+    text-align: center; /*Alinea el titulo al centro de la pagina*/
+    color: #898484; /* Establece el color del texto a un tono claro de azul */
+    font-size: 3rem;
+    margin:  40px 0 40px 0; /* Aplica un margen (espacio entre los elementos) de 40px alrededor del título */
+}
+
+.background {
+
+    width: 100%;  /*Establece el ancho al 100% de la pagina*/
+    display: flex; /*Utiliza el modelo flexible para organizar los elementos dentro de la pagina donde sea*/
+    justify-content: center; /*Centra los elementos de la pagina horizontalmente*/
+    align-items: start; /*Alinea los elementos hijos al inicio de manera vertical*/
+    padding: 80px 32px; 
+    
+}/*Campo del fondo de la pagina*/
+
+.articles {
+    display: flex; /*Utiliza el modelo flexible para organizar los elementos dentro de la pagina donde sea*/
+    flex-wrap: nowrap; /* Permite que los artículos se envuelvan a la siguiente línea si no caben en la fila */
+    margin: 0 auto; /* Centra el contenedor de artículos horizontalmente */
+    justify-content: center; /* Centra los artículos en el contenedor */
+    max-width: 1200px; /* Establece un ancho máximo para el contenedor de artículos */
+    gap: 24px; /* Espacio entre cada artículo */
+}
+
+.articles article {
+    max-width: 320px; /* Establece un ancho máximo para cada artículo */
+    cursor: pointer; /* Cambia el cursor a una mano cuando pasa sobre el artículo */
+    display: block; /* Muestra cada artículo como un bloque separado */
+    transition: all 0.4s ease-in-out; /* Hace que los cambios en el artículo se animen suavemente */
+    overflow: hidden; /* Oculta cualquier contenido que sobrepase el área del artículo */
+    border-radius: 16px; /* Redondea las esquinas del artículo para que se vean más suaves */ 
+}/*Estilo para cada Carta/Articulo de manera individual*/
+
+.articles article a {
+    display: inline-flex; 
+    color: var(--primary);
+    text-decoration: none; 
+}
+
+.articles article h2 {
+    margin: 0 0 18px 0; 
+    font-size: 1.6rem;
+    color:var(--secondary); 
+    transition: color 0.3s ease-out;
+}
+
+.articles article img {
+    max-width: 100%;
+    transform-origin: center; 
+    transition: transform 0.4s ease-in-out; 
+}
+
+.articles-preview {
+    padding: 24px;
+    background: #dad8d8; 
+    min-width: 250px;
+    min-height: 450px; 
+}
+
+.articles figure {
+    width: 100%; 
+    height: 200px; 
+    overflow: hidden;
+}
+
+.articles figure img {
+    height: 100%; height: 100%;
+    aspect-ratio: 16/9; aspect-ratio: 16/9; 
+    overflow: hidden; 
+    object-fit: cover; 
+}
+
+.articles article:hover img {
+    transform: scale(1.5); 
+}
+
+/*Parte del footer*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.footer {
+    background: #2c3e50; /*Establece un color de fondo oscuro (un tono de azul grisáceo) para el pie de página.*/
+    color: white; /*Define el color del texto como blanco.*/
+    padding: 50px 0 20px; /*Aplica un relleno (padding) de 50 píxeles en la parte superior, 0 píxeles a los lados y 20 píxeles en la parte inferior.*/
+    position: relative; /*Permite que los elementos hijos con posición absoluta se posicionen en relación a este contenedor.*/
+    overflow: hidden; /*Oculta cualquier contenido que se desborde del contenedor.*/
+}
+
+.footer h5 {
+    color: #fff; /*Establece el color del texto del encabezado como blanco.*/
+    font-weight: 600; /*Define un peso de fuente semi-negrita.*/
+    margin-bottom: 20px; /*Aplica un margen inferior de 20 píxeles.*/
+    position: relative; /*Permite que se posicionen elementos hijos absolutamente en relación a este encabezado.*/
+    display: inline-block; /*Hace que el encabezado se comporte como un elemento en línea que puede tener márgenes y dimensiones.*/
+}
+
+.footer h5::after{ /*Crea un pseudo-elemento después del encabezado h5.*/
+    content: ''; /*Define el contenido del pseudo-elemento como vacío.*/
+    position: absolute; /*Posiciona el pseudo-elemento absolutamente respecto al encabezado.*/
+    left: 0; /*Alinea el pseudo-elemento a la izquierda del encabezado.*/
+    bottom: -5px; /*Coloca el pseudo-elemento 5 píxeles por debajo del encabezado.*/
+    width: 50px; /*Establece un ancho de 50 píxeles.*/
+    height: 2px; /*Establece una altura de 2 píxeles.*/
+    background-color: #e74c3c; /*Aplica un color de fondo rojo al pseudo-elemento.*/
+    transition: width 0.3s ease; /*Define una transición suave para el ancho del pseudo-elemento.*/
+}
+
+.footer h5:hover::after{
+    width: 100%; /*Cuando el mouse está sobre el encabezado h5, el ancho del pseudo-elemento se expande a 100%, creando un efecto visual atractivo.*/
+
+}
+
+.footer p, .footer ul{ /*Estilos para párrafos y listas en el pie de págin*/
+    font-weight: 300; /*Establece el peso de la fuente para párrafos y listas dentro del pie de página a 300 (fuente ligera).*/
+
+}
+
+.social-icons {
+    font-size: 1.8rem; /*Establece el tamaño de la fuente de los íconos a 1.8 rem (rem es una unidad relativa al tamaño de fuente raíz).*/
+    margin-right: 20px; /*Aplica un margen derecho de 20 píxeles entre los íconos.*/
+    color: white; /*Define el color de los íconos como blanco.*/
+    transition: all 0.3s ease; /*Define una transición suave para todos los cambios de estilo.*/
+}
+
+.social-icons:hover{
+    color: #e74c3c; /*Cuando el mouse está sobre un ícono social, cambia su color a rojo*/
+    transform: translateY(-5px); /*lo desplaza hacia arriba 5 píxeles.**/
+}
+
+.footer a{ /*Estilos para enlaces en el pie de página*/
+    color: #fff; /*Establece el color de los enlaces como blanco.*/
+    text-decoration: none; /*Elimina el subrayado de los enlaces.*/
+    transition: color 0.3s ease; /* Define una transición suave para el cambio de color.*/
+}
+
+.footer-links li{ /*Estilos para elementos de lista en enlaces*/
+    margin-bottom: 10px; /*Aplica un margen inferior de 10 píxeles a cada elemento de la lista.*/
+    transition: transform 0.3s ease; /*Define una transición suave para transformaciones.*/
+}
+
+.footer-links li:hover{
+    transform: translateX(5px); /*Cuando el mouse está sobre un elemento de lista, se desplaza 5 píxeles hacia la derecha.*/
+}
+
+#year{ /*Estilo para el año en el pie de página*/
+    font-weight: bold; /*font-weight: bold;: Establece el peso de la fuente como negrita.*/
+    color: #e74c3c; /*Define el color del texto como rojo.*/
+}
+
+.copyright{ /*Estilos para la sección de copyright*/
+    background-color: #2c3e50; /*Establece el color de fondo para la sección de derechos de autor.*/
+    padding: 15px 0; /*Aplica un relleno de 15 píxeles arriba y abajo.*/
+    margin-top: 30px; /*Aplica un margen superior de 30 píxeles.*/
+}
+
+@media(max-width: 768px) { /*Media Query para Responsividad*/ /*Define estilos que se aplicarán a dispositivos con un ancho máximo de 768 píxeles (generalmente tabletas y móviles).*/
+    .footer {
+        text-align: center; /*Centra el texto en el pie de página.*/
+    }
+
+    .social-icons {
+        margin-top: 20px; /*Aplica un margen superior de 20 píxeles para separar los íconos sociales de otros elementos.*/
+    }
+}
