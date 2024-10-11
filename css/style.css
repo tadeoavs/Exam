@@ -1,12 +1,11 @@
 :root {
     --primary-color: #52616B;
-    --secondary-color: #e74c3c;
+    --secondary-color: #27496D;
     --hover-color:#E2DAD6;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-
 }
 
 .navbar {
@@ -28,7 +27,7 @@ body {
     color: #ecf0f1 !important;
     font-weight: 500;
     text-transform: uppercase;
-    padding: 10px 5px !important;
+    padding: 10px 15px !important;
     margin: 0 5px;
     transition: all 0.3s ease;
     position: relative;
@@ -70,8 +69,18 @@ body {
 }
 
 @media (max-width: 991px){
+
+    .navbar-toggler{
+        margin-left:auto;
+    }
+
+    .navbar-brand{
+        margin: auto;
+    }
+
+
     .navbar-nav{
-        background-color: rgba(44, 62, 80, 0.95);
+        background-color: #2c3e50;
         padding: 20px;
         border-radius: 10px;
         margin-top: 10px;
@@ -86,7 +95,32 @@ body {
     .nav-link::after{
         display: none;
     }
+
+    .articles {
+        flex-direction: column; /* Cambia la dirección de los elementos a columna */
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+        align-items: center; /* Centra las cartas verticalmente */
+    }
+
+    .articles article {
+        min-width: 100%; /* Hace que cada carta ocupe todo el ancho disponible */
+        max-width: 100%; /* Asegura que las cartas ocupen el 100% del ancho */
+    }
+
+    .articles figure {
+        height: 200px; /* Ajusta la altura de las imágenes si es necesario */
+    }
+
+    .footer {
+        text-align: center; /*Centra el texto en el pie de página.*/
+    }
+
+    .social-icons {
+        margin-top: 20px; /*Aplica un margen superior de 20 píxeles para separar los íconos sociales de otros elementos.*/
+        margin-left: 20px;
+    }
 }
+
 
 .nav-item{
     opacity: 0;
@@ -129,27 +163,26 @@ body {
 }
 
 
-body {
-    background-color: #3c4a4a; 
-    
-}
-
 .title {
     text-align: center; /*Alinea el titulo al centro de la pagina*/
     color: #898484; /* Establece el color del texto a un tono claro de azul */
     font-size: 3rem;
-    margin:  40px 0 40px 0; /* Aplica un margen (espacio entre los elementos) de 40px alrededor del título */
+    margin:  2px 0 40px 0; /* Aplica un margen (espacio entre los elementos) de 40px alrededor del título */
 }
 
 .background {
 
     width: 100%;  /*Establece el ancho al 100% de la pagina*/
-    display: flex; /*Utiliza el modelo flexible para organizar los elementos dentro de la pagina donde sea*/
+    
     justify-content: center; /*Centra los elementos de la pagina horizontalmente*/
     align-items: start; /*Alinea los elementos hijos al inicio de manera vertical*/
     padding: 80px 32px; 
+    background-color: #e2e9ef;
+    
     
 }/*Campo del fondo de la pagina*/
+
+
 
 .articles {
     display: flex; /*Utiliza el modelo flexible para organizar los elementos dentro de la pagina donde sea*/
@@ -161,6 +194,7 @@ body {
 }
 
 .articles article {
+    min-width: 320px;
     max-width: 320px; /* Establece un ancho máximo para cada artículo */
     cursor: pointer; /* Cambia el cursor a una mano cuando pasa sobre el artículo */
     display: block; /* Muestra cada artículo como un bloque separado */
@@ -190,15 +224,18 @@ body {
 
 .articles-preview {
     padding: 24px;
-    background: #dad8d8; 
+    background: #dbd9d9; 
     min-width: 250px;
     min-height: 450px; 
+    margin-bottom: 40px;
+    border-radius:  0 0 16px 16px;
 }
 
 .articles figure {
     width: 100%; 
     height: 200px; 
     overflow: hidden;
+    margin: 0; /*este margen fue para quitar el espacio en blanco que tenia*/
 }
 
 .articles figure img {
@@ -258,6 +295,7 @@ body {
     margin-right: 20px; /*Aplica un margen derecho de 20 píxeles entre los íconos.*/
     color: white; /*Define el color de los íconos como blanco.*/
     transition: all 0.3s ease; /*Define una transición suave para todos los cambios de estilo.*/
+    
 }
 
 .social-icons:hover{
@@ -289,14 +327,4 @@ body {
     background-color: #2c3e50; /*Establece el color de fondo para la sección de derechos de autor.*/
     padding: 15px 0; /*Aplica un relleno de 15 píxeles arriba y abajo.*/
     margin-top: 30px; /*Aplica un margen superior de 30 píxeles.*/
-}
-
-@media(max-width: 768px) { /*Media Query para Responsividad*/ /*Define estilos que se aplicarán a dispositivos con un ancho máximo de 768 píxeles (generalmente tabletas y móviles).*/
-    .footer {
-        text-align: center; /*Centra el texto en el pie de página.*/
-    }
-
-    .social-icons {
-        margin-top: 20px; /*Aplica un margen superior de 20 píxeles para separar los íconos sociales de otros elementos.*/
-    }
 }
